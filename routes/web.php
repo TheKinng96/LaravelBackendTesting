@@ -18,13 +18,15 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::get('products', [ProductController::class, 'index'])->name('product.index');
+Route::get('products', [ProductController::class, 'Index'])->name('product.index');
 
-Route::get('create', [ProductController::class, 'create'])->name('create.product');
+Route::get('create', [ProductController::class, 'Create'])->name('create.product');
 
-Route::post('store', [ProductController::class, 'store'])->name('product.store');
+Route::get('edit/product/{id}', [ProductController::class, 'Edit']);
 
-Route::get('edit/product/{id}', [ProductController::class, 'edit']);
+Route::post('store', [ProductController::class, 'Store'])->name('product.store');
+
+Route::post('update/product/{id}', [ProductController::class, 'Update']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');
