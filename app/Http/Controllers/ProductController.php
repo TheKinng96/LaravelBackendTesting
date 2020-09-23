@@ -43,4 +43,11 @@ class ProductController extends Controller
         return redirect()->route('product.index')
             ->with('success', 'Product Created Successfully');
     }
+
+    public function Edit($id)
+    {
+
+        $product = DB::table('products')->where('id', $id)->first();
+        return view('product.edit', compact('product'));
+    }
 }

@@ -41,7 +41,7 @@
     <td><img src="{{ URL::to($product->logo)}}" height="70px" width="80px" alt="{{$product->product_name}}"></td>
     <td>
       <a href="" class="btn btn-info">Show</a>
-      <a href="" class="btn btn-primary">Edit</a>
+      <a href="{{ URL::to('edit/product/'.$product->id)}}" class="btn btn-primary">Edit</a>
       <a href="" class="btn btn-danger">Delete</a>
     </td>
   </tr>

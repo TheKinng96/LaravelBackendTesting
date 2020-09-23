@@ -24,6 +24,8 @@ Route::get('create', [ProductController::class, 'create'])->name('create.product
 
 Route::post('store', [ProductController::class, 'store'])->name('product.store');
 
+Route::get('edit/product/{id}', [ProductController::class, 'edit']);
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');
 })->name('dashboard');
