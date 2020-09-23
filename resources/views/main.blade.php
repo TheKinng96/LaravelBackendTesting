@@ -12,7 +12,7 @@
   <div class="container">
     <div class="row">
       <h1>Add Your Product</h1>
-      <a href="" class="btn btn-success">Add Your Product</a>
+      <a href="{{route('product.index')}}" class="btn btn-success">Add Your Product</a>
     </div>
   </div>
 
