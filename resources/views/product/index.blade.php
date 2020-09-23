@@ -42,7 +42,7 @@
     <td>
       <a href="" class="btn btn-info">Show</a>
       <a href="{{ URL::to('edit/product/'.$product->id)}}" class="btn btn-primary">Edit</a>
-      <a href="" class="btn btn-danger">Delete</a>
+      <a href="{{ URL::to('delete/product/'.$product->id)}}" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
     </td>
   </tr>
   @endforeach

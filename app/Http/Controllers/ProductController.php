@@ -78,4 +78,15 @@ class ProductController extends Controller
         return redirect()->route('product.index')
             ->with('success', 'Product Updated Successfully');
     }
+
+    public function Delete($id)
+    {
+
+        $data = DB::table('products')->where('id', $id)->first();
+        $image = $data->logo;
+        unlink($image);
+        $product = DB::table('products')->where('id', $id)->delete();
+        return redirect()->route('product.index')
+            ->with('success', 'Product Deleted Successfully');
+    }
 }

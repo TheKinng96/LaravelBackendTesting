@@ -28,6 +28,8 @@ Route::post('store', [ProductController::class, 'Store'])->name('product.store')
 
 Route::post('update/product/{id}', [ProductController::class, 'Update']);
 
+Route::get('delete/product/{id}', [ProductController::class, 'Delete']);
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');
 })->name('dashboard');
