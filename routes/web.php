@@ -20,6 +20,10 @@ Route::get('/', function () {
 
 Route::get('products', [ProductController::class, 'index'])->name('product.index');
 
+Route::get('create', [ProductController::class, 'create'])->name('create.product');
+
+Route::post('store', [ProductController::class, 'store'])->name('product.store');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');
 })->name('dashboard');
