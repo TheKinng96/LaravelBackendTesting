@@ -37,7 +37,7 @@
   <tr>
     <td>{{$product -> product_name}}</td>
     <td>{{$product -> product_code}}</td>
-    <td>{{$product -> details}}</td>
+    <td>{{str_limit($product -> details, $limit = 70)}}</td>
     <td><img src="{{ URL::to($product->logo)}}" height="70px" width="80px" alt="{{$product->product_name}}"></td>
     <td>
       <a href="{{ URL::to('show/product/'.$product->id)}}" class="btn btn-info">Show</a>
