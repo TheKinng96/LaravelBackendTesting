@@ -49,4 +49,6 @@
 
 </table>
 
+{{$products->links("pagination::bootstrap-4")}}
+
 @endsection
